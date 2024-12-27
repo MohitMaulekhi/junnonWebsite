@@ -9,7 +9,7 @@ function PhotoOfTheDay({ images }) {
         <div className="mt-16 flex flex-wrap items-center justify-center px-[5vw] text-center sm:flex-nowrap sm:px-[2vw]">
             <div className="flex min-w-[50vw] items-center justify-center">
                 <h2 className="my-4 bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl md:w-[35vw] md:text-6xl lg:text-7xl"> 
-                    Photos of the Day 
+                    Photo of the Day 
 
                 </h2>
             </div>
