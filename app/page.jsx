@@ -6,12 +6,14 @@ import Div100vh from "@/components/Div100vh";
 import StorygramCards from "@/components/StorygramCards";
 import fetchData from "@/lib/sanity/fetchData";
 import fetchLogo from "@/lib/sanity/fetchLogo";
+import PhotoOfTheDay from "@/components/PhotoOfTheDay";
+import fetchImages from "@/lib/sanity/fetchImagesForPhotoOfTheDay";
 
 export default async function Home() {
   const homeData = await fetchData("home");
   const logoOnlyWhite = await fetchLogo("logo-only-white");
   const { hero, about, featured, story } = homeData;
-
+  const photoOftheDayImages = await fetchImages();
   const renderedHero = (
     <div className="hero flex flex-col items-center">
       <h1 className="head">{hero.head}</h1>
@@ -37,6 +39,10 @@ export default async function Home() {
           </div>
         </div>
       </Div100vh>
+
+      <PhotoOfTheDay images={photoOftheDayImages}/>
+
+      
       <div className="mx-auto w-9/12">
         {/* about */}
         <div className="pb-[3vw] pt-[7vw]">
@@ -67,6 +73,9 @@ export default async function Home() {
             ))}
           </div>
         </div>
+
+            
+
 
         {/* featured shots */}
         <div className="featured pb-[3vw] pt-[7vw]">
